@@ -11,12 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Remove Content
+        run: |
+          cd Assets/Package/
+          rm -rf Content/*
+
       - name: Clone and Copy data
         run: |
           cd ..
           git clone https://github.com/RevenueCat/purchases-unity.git
-          cd purchases-unity
-          ls
+          cp -rf purchases-unity/RevenueCat/* revenuecat/Assets/Package/
 
       - name: Config
         run: |
@@ -41,6 +45,7 @@ jobs:
           ls
 
       - name: Push UPM
+        if: false
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
