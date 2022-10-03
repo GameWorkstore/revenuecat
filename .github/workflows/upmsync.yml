@@ -15,7 +15,7 @@ jobs:
         run: |
           cd ..
           git clone https://github.com/RevenueCat/purchases-unity.git
-          cd revenuecat
+          cd purchases-unity
           ls
 
       - name: Config
