@@ -1,0 +1,17 @@
+{
+  "name": "com.gameworkstore.revenuecat",
+  "version": "4.3.0",
+  "displayName": "RevenueCat",
+  "description": "RevenueCat UPM package (unofficial)",
+  "unity": "2021.3",
+  "icon": ".icon.png",
+  "keywords": ["revenue", "cat", "iap"],
+  "author": {
+    "name": "Game Workstore",
+    "email": "contact@gameworkstore.com",
+    "url": "https://gameworkstore.com"
+  },
+  "dependencies": {
+    "com.google.external-dependency-manager": "1.2.172"
+  }
+}
