@@ -22,6 +22,14 @@ jobs:
           git clone https://github.com/RevenueCat/purchases-unity.git
           cp -rf purchases-unity/RevenueCat/* revenuecat/Assets/Package/
 
+      - name: Diff and Push
+        run: |
+          git add --a
+          if [[ `git status --porcelain --untracked-files=no` ]]; then
+            git commit -m "Updated Content"
+            git push origin
+          fi
+
       - name: Config
         run: |
           git config --local user.email "contact@gameworkstore.com"
@@ -45,7 +53,6 @@ jobs:
           ls
 
       - name: Push UPM
-        if: false
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
