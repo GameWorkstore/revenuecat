@@ -11,6 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Config
+        run: |
+          git config --local user.email "contact@gameworkstore.com"
+          git config --local user.name "game-workstore-bot"
+
       - name: Remove Content
         run: |
           cd Assets/Package/
@@ -30,11 +35,6 @@ jobs:
             git push origin
           fi
 
-      - name: Config
-        run: |
-          git config --local user.email "contact@gameworkstore.com"
-          git config --local user.name "game-workstore-bot"
-      
       - name: Update README
         run: |
           if ! cmp --silent "README.md" "Assets/Package/README.md"; then
