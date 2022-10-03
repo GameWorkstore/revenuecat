@@ -15,9 +15,9 @@ jobs:
       
       - name: Update README
         run: |
-          if ! cmp --silent "README.md" "UnitySDK/Assets/Package/README.md"; then
+          if ! cmp --silent "README.md" "Assets/Package/README.md"; then
               echo "different"
-              cp -f README.md UnitySDK/Assets/Package/README.md
+              cp -f README.md Assets/Package/README.md
               git add --a
               git commit -m "Updated README.md"
               git push origin
@@ -26,7 +26,7 @@ jobs:
       - name: Cook UPM
         run: |
           git checkout main
-          git subtree split -P UnitySDK/Assets/Package/ -b upm
+          git subtree split -P Assets/Package/ -b upm
           git checkout upm
           ls
 
