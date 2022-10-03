@@ -1,7 +1,7 @@
 {
   "name": "com.gameworkstore.revenuecat",
   "version": "4.3.0",
-  "displayName": "RevenueCat UPM package (unofficial)",
+  "displayName": "RevenueCat",
   "description": "RevenueCat UPM package (unofficial)",
   "unity": "2021.3",
   "icon": ".icon.png",
