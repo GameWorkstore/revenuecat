@@ -3,11 +3,20 @@ on:
   push:
     branches:
       - main
+env:
+  tag: 4.3.0
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Clone and Copy data
+        run: |
+          cd ..
+          git clone https://github.com/RevenueCat/purchases-unity.git
+          ls
+
       - name: Config
         run: |
           git config --local user.email "contact@gameworkstore.com"
