@@ -18,8 +18,8 @@ jobs:
 
       - name: Remove Content
         run: |
-          cd Assets/Package/
-          rm -rf Content/*
+          cd Assets/Package/Content/
+          rm -rf *
 
       - name: Clone and Copy data
         run: |
